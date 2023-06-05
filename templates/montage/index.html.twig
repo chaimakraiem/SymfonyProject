@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block titre %} Montage{% endblock %}
+
+{% block body %}
+    <h3>Montage : {{ montage.nomMontage }}</h3>
+    <h4>Client : {{ montage.client }}</h4>
+    <h4>Cout : {{ montage.cout}}</h4>
+    <h4>Date de creation : {{ montage.getCreatedAt() |date('  d/m/y ')}}</h4>
+    <table class="table table-borderless ">
+        <thead class="table-dark">
+
+        <tr>
+            <th>Nom Piece </th>
+            <th>Quantité</th>
+            <th>Fournisseur</th>
+            <th> Image</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for piece in listpieces %}
+            <tr>
+
+                <ul class="nav nav-pills nav-stacked">
+                    <td>{{ piece.nomPiece |upper }}</td>
+                    <td>{{ piece.quantite }}</td>
+                    <td>{{ piece.fournisseur }}</td>
+                    <td><img class="rounded"  alt="piece_image" width="50px" height=" 50px" src="{{ publicPath ~ piece.image }}"/></td>
+                </ul>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune piece</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </ul>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% form_theme f 'bootstrap_5_layout.html.twig' %}
+
+{% block title  %} add montage {% endblock%}
+{% block body %}
+
+    <div class="container">
+        <div class=" text-center mt-5 ">
+
+            <h1 > Ajouter une montage</h1>
+
+        </div>
+        <div class="row ">
+            <div class="col-lg-7 mx-auto">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+
+                        <div class = "container">
+                            {{ form_start(f) }}
+
+
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                {{ form_row(f.nomMontage) }}
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form_row(f.client) }}
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                {{ form_row(f.cout) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                {{ form_row(f.created_At) }}
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+
+                                        <input type="submit" class="btn btn-info btn-send  pt-2 btn-block
+                            " value="Ajouter montage" >
+
+                                    </div>
+
+                                </div>
+
+
+                            {{ form_end(f) }}
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.8 -->
+
+            </div>
+            <!-- /.row-->
+
+        </div>
+    </div>
+
+{%endblock%}
